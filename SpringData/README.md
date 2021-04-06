@@ -2,27 +2,28 @@
 
 ## Step 1:  Create New Template
 
+Please note that despite the screenshot we are **NOT** using Thymleaf. Please do NOT include that.
+
 ![](../images/SpringData-Intializer.png)
 
 Add the following;
 1. Spring Web
 2. Spring Data JPA
 3. MySQL Driver
-4. Thymeleaf
-5. Spring Boot Devtools
+4. Spring Boot Devtools
 
 
 
 ## Step 2: Unzip Spring Initializer in your git rep
 
-Use your OS of choice to unzip the SpringStarter.zip in your git repo.
+Use your OS of choice to unzip the SpringData.zip in your git repo.
 
 
 ## Step 3: Import the Maven Project into Eclipse (or your IDE of choice)
 
 Go Import -> Existing Maven Project.
 
-Navigate to your git repo folder and find the SpringStarter subfolder.
+Navigate to your git repo folder and find the SpringData subfolder.
 
 Select the springtarter subfolder.
 
@@ -90,7 +91,7 @@ You may need to use eclipse to "Reload Maven" after changing the pom.xml
 
 Create the following file/folder
 
-`SpringSetup/src/main/webapp/WEB-INF/jsp/index.jsp`
+`SpringData/src/main/webapp/WEB-INF/jsp/index.jsp`
 
 Add in a small jsp file in that folder
 
@@ -113,7 +114,7 @@ Add in a small jsp file in that folder
 Add a new Java class `MainController.java` as follows:
 
 ```java
-package com.example.SpringStarter;
+package com.example.SpringData;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
