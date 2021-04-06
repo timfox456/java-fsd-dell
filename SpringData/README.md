@@ -53,4 +53,56 @@ spring.mvc.view.suffix=.jsp
 server.port=8090
 ```
 
+## Step 6: Try building.
+
+
+Eclipse: Right Click -> Run As -> Maven Build...  Then type in goals: spring-boot:run
+
+Or in STS, simply right click -> run as -> Spring Boot App.
+
+It should run this time, but won't neccessarily do anything.
+
+
+
+
+## Step 7: Add some extra dependencies to `pom.xml` file
+
+```xml
+        <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
+        </dependency>
+
+
+        <dependency>
+             <groupId>org.apache.tomcat.embed</groupId>
+             <artifactId>tomcat-embed-jasper</artifactId>
+             <scope>provided</scope>
+        </dependency>
+
+````
+
+You may need to use eclipse to "Reload Maven" after changing the pom.xml
+
+
+## Step 8: Add index.jsp file to the project.
+
+Create the following file/folder
+
+`SpringSetup/src/main/webapp/WEB-INF/jsp/index.jsp`
+
+Add in a small jsp file in that folder
+
+```html
+<html>
+<body>
+<h2>Spring Application</h2>
+
+</body>
+</html>
+
+```
+
+
 
