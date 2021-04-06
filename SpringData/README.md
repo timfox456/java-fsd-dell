@@ -107,10 +107,6 @@ Add in a small jsp file in that folder
 
 ## Step 9: Add `MainController` class
 
-
-
-## Step 5: Add New Java Class MainController
-
 Add a new Java class `MainController.java` as follows:
 
 ```java
@@ -132,6 +128,22 @@ public class MainController {
 
 }
 ```
+
+
+## Step 9: Run
+
+
+Eclipse: Right Click -> Run As -> Maven Build...  Then type in goals: spring-boot:run
+
+Or in STS, simply right click -> run as -> Spring Boot App.
+
+Navigate your browser of choice to `http://localhost:8090/`
+
+You should see: 
+
+**Spring Application**
+
+
 
 
 
