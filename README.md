@@ -23,6 +23,9 @@ You will need to install MySQL or MariaDB. You can download [here](https://dev.m
 
 One alternative to this if you lack admin permissions is [XAMPP](https://www.apachefriends.org/download.html).
 
+When installing MySQL, use legacy authentication, and type in your desired root password on install. Make sure you remember or squirrel the password away.
+Select "Yes" for MySQL router connecting to InnoDB clusters.
+
 
 #### Creating a database and user
 
