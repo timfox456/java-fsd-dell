@@ -6,6 +6,7 @@ Java FSD for Dell
 ## Projects
 
  * [SpringStarter](./SpringStarter/): Hello World for Spring Web
+ * [SpringData](./SpringData/): Hello World for Spring Data
 
 ## Using Git
 
