@@ -285,3 +285,41 @@ Add a new mapping for `users` which will call the service and include in the `Mo
     }
 ```
 
+## Step 14: Create a new view called `users.jsp`
+
+Next to the existing `index.jsp` create a new file (not class) called index.jsp.  It should be in the `webapp/WEB-INF/jsp` folder.
+
+This is the contents of the file:
+
+```html
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
+
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h2>Users</h2>
+
+<table style="float:left">
+   <tr><th>ID</th><th>Name</th><th>Email</th><th>Password</th></tr>
+   <c:forEach items="${users}" var="user" varStatus="count">
+    <tr id="${count.index}">
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.password}</td>
+    </tr>
+  </c:forEach>
+</table>
+
+
+</body>
+</html>
+
+```
+
