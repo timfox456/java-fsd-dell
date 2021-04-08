@@ -262,3 +262,26 @@ public class UserService {
 
 ```
 
+## Step 13: Make Changes to MainController
+
+Add an autowired reference to UserService in the MainController:
+
+```java
+    @Autowired
+    UserService userService;
+```
+
+Add a new mapping for `users` which will call the service and include in the `ModelMap`;
+
+```java
+    @RequestMapping(value="/users", method = RequestMethod.GET)
+    public String showUsers(ModelMap model)
+    {
+    	Iterable<User> users = userService.GetAllUsers();
+    	
+    	model.addAttribute("users", users);
+    	
+    	return("users");
+    }
+```
+
