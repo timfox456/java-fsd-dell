@@ -323,3 +323,35 @@ table, th, td {
 
 ```
 
+## Step 15: Add a link to the `index.jsp`
+
+Modify the index.jsp to add a link as follows: `<a href="users">Show Users</a>`.
+
+The final index JSP will look like this:
+
+```html
+<html>
+<body>
+<h2>Spring Application</h2>
+
+<a href="users">Show Users</a>
+
+</body>
+</html>
+```
+
+## Step 16: Run Your Application
+
+Run your application. Navigate to `http://localhost:8090`.  You should see the following
+
+```text
+
+Spring Application
+
+Show Users
+```
+
+Click on the `Show Users` link. You should then see your users displayed from your database.
+
+You can also directly navigate to `http://localhost:8090/users` if you want.
+
