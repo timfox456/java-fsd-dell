@@ -217,6 +217,48 @@ public class User {
 ```
 
 
+## Step 11: Create A Repository Interface.
+
+Create a new Java Interface called UserRepository.
+
+Paste the following code:
+
+```java
+package com.example.SpringData;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, Integer> {
+}
+```
+
+## Step 12: Create a User Service
+
+Create a new class called UserService
+
+Paste the following Code:
+
+```java
+package com.example.SpringData
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
+@Service
+public class UserService {
+
+        @Autowired
+         private UserRepository userRepository;
+
+
+
+    public Iterable<User> GetAllUsers()
+    {
+        return userRepository.findAll();
+    }
+
+```
 
