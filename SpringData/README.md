@@ -144,6 +144,78 @@ You should see:
 **Spring Application**
 
 
+## Step 10: Create Entity Class: User
+
+Create a new class User.  It can be under the `com.example.SpringData` package.
+
+It can look like this:
+
+```java
+
+package com.example.SpringData;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+	
+	@Id
+	private int id;
+	private String email;
+	private String name;
+	private String password;
+
+}
+```
+
+Use your IDE of choice to generate setters and getters (Eclipse: Source -> Generate Setters and Getters). 
+The result should look like this:
+
+```java
+
+package com.example.SpringData;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+	
+	@Id
+	private int id;
+	private String email;
+	private String name;
+	private String password;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+}
+
+```
+
 
 
 
