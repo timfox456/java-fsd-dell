@@ -7,6 +7,8 @@ Java FSD for Dell
 
  * [SpringStarter](./SpringStarter/): Hello World for Spring Web
  * [SpringData](./SpringData/): Hello World for Spring Data
+ * [Project 1: UserManager](./UserManager/): Project for Search for User
+ * [Final Assessment: Sporty Shoes](./SportyShoes/): Final Assessment Sporty Shoes
 
 ## Using Git
 
