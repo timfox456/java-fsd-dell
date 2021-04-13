@@ -70,3 +70,192 @@ insert into user (email, name, password) VALUES ("lee@gmail.com", "Lee", "passwo
 
 
  
+# Spring Data Example
+
+## Step 1:  Create New Template
+
+Please note that despite the screenshot we are **NOT** using Thymleaf. Please do NOT include that.
+
+![](../images/SpringData-Intializer.png)
+
+Add the following;
+1. Spring Web
+2. Spring Data JPA
+3. MySQL Driver
+4. Spring Boot Devtools
+
+
+
+## Step 2: Unzip Spring Initializer in your git rep
+
+Use your OS of choice to unzip the SpringData.zip in your git repo.
+
+
+## Step 3: Import the Maven Project into Eclipse (or your IDE of choice)
+
+Go Import -> Existing Maven Project.
+
+Navigate to your git repo folder and find the SpringData subfolder.
+
+Select the springtarter subfolder.
+
+
+## Step 4: Edit application.properties.
+
+Go to src/main/resources/application.properties
+Add the following:
+
+```text
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+
+logging.level.org.springframework.web: DEBUG
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+server.port=8090
+```
+
+
+
+## Step 5: Add some extra dependencies to `pom.xml` file
+
+```xml
+        <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
+        </dependency>
+
+
+        <dependency>
+             <groupId>org.apache.tomcat.embed</groupId>
+             <artifactId>tomcat-embed-jasper</artifactId>
+             <scope>provided</scope>
+        </dependency>
+
+````
+
+You may need to use eclipse to "Reload Maven" after changing the pom.xml
+
+
+## Step 6: Create Entity Class: User
+
+Create a new class User.  It can be under the `com.example.SpringData` package.
+
+It can look like this:
+
+```java
+
+package com.example.SpringData.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+	
+	@Id
+	private int id;
+	private String email;
+	private String name;
+	private String password;
+
+}
+```
+
+Use your IDE of choice to generate setters and getters (Eclipse: Source -> Generate Setters and Getters). 
+The result should look like this:
+
+```java
+
+package com.example.SpringData.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+	
+	@Id
+	private int id;
+	private String email;
+	private String name;
+	private String password;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+}
+
+```
+
+
+## Step 7: Create A Repository Interface.
+
+Create a new Java Interface called UserRepository.
+
+Paste the following code:
+
+```java
+package com.example.SpringData.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, Integer> {
+}
+```
+
+## Step 8: Create a User Service
+
+Create a new class called UserService
+
+Paste the following Code:
+
+```java
+package com.example.SpringData.services
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class UserService {
+
+        @Autowired
+         private UserRepository userRepository;
+
+
+
+    public Iterable<User> GetAllUsers()
+    {
+        return userRepository.findAll();
+    }
+
+```
+
+
