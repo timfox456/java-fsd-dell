@@ -369,7 +369,7 @@ Add new methods as follows:
 
 ### Step 13: Create UserEdit form
 
-Create a UserEdit.jsp page as follows:
+Create a `useredit.jsp` page as follows:
  
 ```html
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
@@ -385,6 +385,7 @@ table, th, td {
 <body>
 <h2>User Edit</h2>
 
+<p><a href="userquery">Return to Query Page</a></p>
 
 <form action="useredit" method="post">
   <label for="uid">User Id:</label><br>
@@ -474,21 +475,26 @@ In the UserController.java make the following changes:
     	model.addAttribute("message", "Welcome!");
     	return("userquery");
     }
-    
     @RequestMapping(value="/userquery", method = RequestMethod.POST)
     public String handleQuery(
     		@RequestParam(value = "uid", required = true) Integer uid,
     		ModelMap model) {
     
     	
-    	
+    	try {
     	//TODO: Handle empty or invalid UserId
-    	User user = userService.GetUserById(uid);
+    		User user = userService.GetUserById(uid);
     	
-    	model.addAttribute("user", user);
+    		model.addAttribute("user", user);
     
-    	return("useredit");
+    		return("useredit");
+    	}
+    	catch(Exception ex) {
+    		model.addAttribute("message", "ERROR: Unknown userid");
+    		return("userquery");
+    	}
     }
+    
     
     @RequestMapping(value="/useredit", method = RequestMethod.POST)
     public String handleEdit(

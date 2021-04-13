@@ -19,6 +19,11 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public String welcomePage(ModelMap model) {
+    	return showUsers(model);
+    }
     @RequestMapping(value="/userquery", method = RequestMethod.GET)
     public String showUsers(ModelMap model)
     {
@@ -32,13 +37,18 @@ public class UserController {
     		ModelMap model) {
     
     	
-    	
+    	try {
     	//TODO: Handle empty or invalid UserId
-    	User user = userService.GetUserById(uid);
+    		User user = userService.GetUserById(uid);
     	
-    	model.addAttribute("user", user);
+    		model.addAttribute("user", user);
     
-    	return("useredit");
+    		return("useredit");
+    	}
+    	catch(Exception ex) {
+    		model.addAttribute("message", "ERROR: Unknown userid");
+    		return("userquery");
+    	}
     }
     
     @RequestMapping(value="/useredit", method = RequestMethod.POST)

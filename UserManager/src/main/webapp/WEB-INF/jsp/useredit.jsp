@@ -11,6 +11,7 @@ table, th, td {
 <body>
 <h2>User Edit</h2>
 
+<p><a href="userquery">Return to Query Page</a></p>
 
 <form action="useredit" method="post">
   <label for="uid">User Id:</label><br>
