@@ -31,4 +31,11 @@ public class UserService {
     	return user.get();
     	
     }
+    
+    public User EditUser(User user) {
+    	
+    	//TODO: Not doing any error checking
+    	
+    	return userRepository.save(user);
+    }
 }

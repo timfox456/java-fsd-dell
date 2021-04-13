@@ -319,7 +319,7 @@ table, th, td {
 ```
 
 
-### Step 11: Create New Method in UserService:
+### Step 11: Create New Methods in UserService:
 
 Add the import as folows:
 
@@ -327,7 +327,7 @@ Add the import as folows:
 import java.util.Optional;
 ```
 
-Add a new method as follows:
+Add new methods as follows:
 
 ```java
 
@@ -338,6 +338,13 @@ Add a new method as follows:
     	Optional<User> user = userRepository.findById(id);
     	
     	return user.get();
+    }
+
+    public User EditUser(User user) {
+    	
+    	//TODO: Not doing any error checking
+    	
+    	return userRepository.save(user);
     }
 ```
 
