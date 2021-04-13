@@ -14,7 +14,7 @@ table, th, td {
 
 <form action="useredit" method="post">
   <label for="uid">User Id:</label><br>
-  <input type="text" id="uid" name="uid" value="${user.email}"><br>
+  <input type="text" id="uid" name="uid" value="${user.id}"><br>
    <label for="email">Email:</label><br>
   <input type="text" id="email" name="email" value="${user.email}"><br>
   <label for="username">Name:</label><br>
