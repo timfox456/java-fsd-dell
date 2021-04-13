@@ -207,6 +207,8 @@ Paste the following code:
 package com.example.SpringData.repositories;
 
 import org.springframework.data.repository.CrudRepository;
+import com.example.UserManager.entities.User;
+
 
 public interface UserRepository extends CrudRepository<User, Integer> {
 }
@@ -225,6 +227,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.example.UserManager.entities.User;
+import com.example.UserManager.repostories.UserRepository;
+
 
 
 @Service
