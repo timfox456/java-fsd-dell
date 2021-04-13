@@ -454,3 +454,65 @@ Submission should take you back to the userquery form.
 Confirm that your changes are stored in teh database.
 
 
+### Step 17: Add a helpful error message and status confirmation
+
+In userquery form: add the folowin html above the form:
+
+```html
+
+<p>${message}</p>
+
+```
+
+In the UserController.java make the following changes:
+
+```java
+
+    @RequestMapping(value="/userquery", method = RequestMethod.GET)
+    public String showUsers(ModelMap model)
+    {
+    	model.addAttribute("message", "Welcome!");
+    	return("userquery");
+    }
+    
+    @RequestMapping(value="/userquery", method = RequestMethod.POST)
+    public String handleQuery(
+    		@RequestParam(value = "uid", required = true) Integer uid,
+    		ModelMap model) {
+    
+    	
+    	
+    	//TODO: Handle empty or invalid UserId
+    	User user = userService.GetUserById(uid);
+    	
+    	model.addAttribute("user", user);
+    
+    	return("useredit");
+    }
+    
+    @RequestMapping(value="/useredit", method = RequestMethod.POST)
+    public String handleEdit(
+    		@RequestParam(value = "uid", required = true) Integer uid,
+    		@RequestParam(value = "email", required = true) String email,
+    		@RequestParam(value = "username", required = true) String username,
+    		@RequestParam(value = "password", required = true) String password,
+    		ModelMap model) {
+    	//TODO: Handle empty or invalid UserId
+    	try {
+    		User user = userService.GetUserById(uid);
+    	    
+    		user.setEmail(email);
+    		user.setName(username);
+    		user.setPassword(password);
+    	
+    		userService.EditUser(user);
+    		model.addAttribute("message", "User Edited Successfully");
+    	}
+    	catch (Exception ex) {
+        	model.addAttribute("message", "User Edit NOT Successful");
+
+    	}
+    	return("userquery");
+    }
+    
+```

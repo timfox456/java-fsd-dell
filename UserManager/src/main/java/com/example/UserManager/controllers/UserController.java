@@ -20,8 +20,9 @@ public class UserController {
 	private UserService userService;
 
     @RequestMapping(value="/userquery", method = RequestMethod.GET)
-    public String showUsers()
+    public String showUsers(ModelMap model)
     {
+    	model.addAttribute("message", "Welcome!");
     	return("userquery");
     }
     
@@ -45,16 +46,23 @@ public class UserController {
     		@RequestParam(value = "uid", required = true) Integer uid,
     		@RequestParam(value = "email", required = true) String email,
     		@RequestParam(value = "username", required = true) String username,
-    		@RequestParam(value = "password", required = true) String password
-    		) {
+    		@RequestParam(value = "password", required = true) String password,
+    		ModelMap model) {
     	//TODO: Handle empty or invalid UserId
-    	User user = userService.GetUserById(uid);
+    	try {
+    		User user = userService.GetUserById(uid);
     	    
-    	user.setEmail(email);
-    	user.setName(username);
-    	user.setPassword(password);
+    		user.setEmail(email);
+    		user.setName(username);
+    		user.setPassword(password);
     	
-    	userService.EditUser(user);
+    		userService.EditUser(user);
+    		model.addAttribute("message", "User Edited Successfully");
+    	}
+    	catch (Exception ex) {
+        	model.addAttribute("message", "User Edit NOT Successful");
+
+    	}
     	return("userquery");
     }
     

@@ -11,6 +11,7 @@ table, th, td {
 <body>
 <h2>User Query</h2>
 
+<p>${message}</p>
 
 <form action="userquery" method="post">
   <label for="uid">User Id:</label><br>
