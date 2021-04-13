@@ -319,3 +319,46 @@ table, th, td {
 ```
 
 
+### Step 11: Create New Method in UserService:
+
+Add the import as folows:
+
+```java
+import java.util.Optional;
+```
+
+Add a new method as follows:
+
+```java
+
+    public User GetUserById(int id)
+    {
+    	//TODO: Handle non-existent user. Currently throws an exception
+    	
+    	Optional<User> user = userRepository.findById(id);
+    	
+    	return user.get();
+    }
+```
+
+### Step 12: Handle post event in UserController:
+
+```java
+
+    @RequestMapping(value="/userquery", method = RequestMethod.POST)
+    public String handleQuery(
+    		@RequestParam(value = "uid", required = true) Integer uid,
+    		ModelMap model) {
+    	
+    	//TODO: Handle empty or invalid UserId
+    	User user = userService.GetUserById(uid);
+    	
+    	model.addAttribute("user", user);
+    
+    	return("useredit");
+    }
+
+```
+
+
+

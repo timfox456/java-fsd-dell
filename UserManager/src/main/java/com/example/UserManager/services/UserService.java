@@ -12,13 +12,23 @@ import com.example.UserManager.repositories.UserRepository;
 @Service
 public class UserService {
 
-        @Autowired
-         private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
 
 
     public Iterable<User> GetAllUsers()
     {
         return userRepository.findAll();
+    }
+    
+    public User GetUserById(int id)
+    {
+    	//TODO: Handle non-existent user. Currently throws an exception
+    	
+    	Optional<User> user = userRepository.findById(id);
+    	
+    	return user.get();
+    	
     }
 }
