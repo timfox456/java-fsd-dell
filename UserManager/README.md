@@ -414,3 +414,43 @@ Enter a user that exissts in the db, for example `1`.
 You should be forwarded to the useredit form with the correct values filed in.
 
 
+### Step 15: Handle the useredit post
+
+Add the following:
+
+```java
+
+    @RequestMapping(value="/useredit", method = RequestMethod.POST)
+    public String handleEdit(
+    		@RequestParam(value = "uid", required = true) Integer uid,
+    		@RequestParam(value = "email", required = true) String email,
+    		@RequestParam(value = "username", required = true) String username,
+    		@RequestParam(value = "password", required = true) String password
+    		) {
+    	//TODO: Handle empty or invalid UserId
+    	User user = userService.GetUserById(uid);
+    	    
+    	user.setEmail(email);
+    	user.setName(username);
+    	user.setPassword(password);
+    	
+    	userService.EditUser(user);
+    	return("userquery");
+    }
+
+```
+### Step 16: Test Application
+
+Run Applicaition. Navigate to `http://localhost:8090/userquery`.
+
+Enter a user that exissts in the db, for example `1`.
+
+You should be forwarded to the useredit form with the correct values filed in.
+
+Go ahead and make a small edit to one of the fields such as password.
+
+Submission should take you back to the userquery form.
+
+Confirm that your changes are stored in teh database.
+
+

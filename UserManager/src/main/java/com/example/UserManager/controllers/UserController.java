@@ -40,5 +40,23 @@ public class UserController {
     	return("useredit");
     }
     
+    @RequestMapping(value="/useredit", method = RequestMethod.POST)
+    public String handleEdit(
+    		@RequestParam(value = "uid", required = true) Integer uid,
+    		@RequestParam(value = "email", required = true) String email,
+    		@RequestParam(value = "username", required = true) String username,
+    		@RequestParam(value = "password", required = true) String password
+    		) {
+    	//TODO: Handle empty or invalid UserId
+    	User user = userService.GetUserById(uid);
+    	    
+    	user.setEmail(email);
+    	user.setName(username);
+    	user.setPassword(password);
+    	
+    	userService.EditUser(user);
+    	return("userquery");
+    }
+    
 
 }
