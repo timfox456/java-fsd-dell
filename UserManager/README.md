@@ -360,5 +360,12 @@ Add a new method as follows:
 
 ```
 
+### Step 13: Test Application
+
+Run Applicaition. Navigate to `http://localhost:8090/userquery`.
+
+Enter a user that exissts in the db, for example `1`.
+
+You should be forwarded to the useredit form with the correct values filed in.
 
 
