@@ -221,7 +221,7 @@ Create a new class called UserService
 Paste the following Code:
 
 ```java
-package com.example.UserManager.services
+package com.example.UserManager.services;
 
 import java.util.Optional;
 
