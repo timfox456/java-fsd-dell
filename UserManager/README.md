@@ -79,7 +79,7 @@ Use your OS of choice to unzip the UserManager.zip in your git repo.
 
 Go Import -> Existing Maven Project.
 
-Navigate to your git repo folder and find the SpringData subfolder.
+Navigate to your git repo folder and find the UserManager subfolder.
 
 Select the springtarter subfolder.
 
@@ -126,13 +126,13 @@ You may need to use eclipse to "Reload Maven" after changing the pom.xml
 
 ## Step 6: Create Entity Class: User
 
-Create a new class User.  It can be under the `com.example.SpringData` package.
+Create a new class User.  It can be under the `com.example.UserManager` package.
 
 It can look like this:
 
 ```java
 
-package com.example.SpringData.entities;
+package com.example.UserManager.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -154,7 +154,7 @@ The result should look like this:
 
 ```java
 
-package com.example.SpringData.entities;
+package com.example.UserManager.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -204,7 +204,7 @@ Create a new Java Interface called UserRepository.
 Paste the following code:
 
 ```java
-package com.example.SpringData.repositories;
+package com.example.UserManager.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import com.example.UserManager.entities.User;
@@ -221,14 +221,14 @@ Create a new class called UserService
 Paste the following Code:
 
 ```java
-package com.example.SpringData.services
+package com.example.UserManager.services
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.UserManager.entities.User;
-import com.example.UserManager.repostories.UserRepository;
+import com.example.UserManager.repositories.UserRepository;
 
 
 
@@ -244,6 +244,8 @@ public class UserService {
     {
         return userRepository.findAll();
     }
+
+}
 
 ```
 
