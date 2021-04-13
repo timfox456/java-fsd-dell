@@ -62,7 +62,11 @@ insert into user (email, name, password) VALUES ("lee@gmail.com", "Lee", "passwo
 ```
 
 
-### Info
+## Steps:
 
- * Due Date: 2021-03-16
+###  Step 1: Create a new UserManager Project as the screenshot shows
+
+![](../images/UserManager-Initializer.png)
+
+
  
