@@ -28,7 +28,7 @@ public class UserController {
     @RequestMapping(value="/userquery", method = RequestMethod.POST)
     public String handleQuery(
     		@RequestParam(value = "uid", required = true) Integer uid,
-    		Model model) {
+    		ModelMap model) {
     
     	
     	
