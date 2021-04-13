@@ -70,25 +70,9 @@ insert into user (email, name, password) VALUES ("lee@gmail.com", "Lee", "passwo
 
 
  
-# Spring Data Example
-
-## Step 1:  Create New Template
-
-Please note that despite the screenshot we are **NOT** using Thymleaf. Please do NOT include that.
-
-![](../images/SpringData-Intializer.png)
-
-Add the following;
-1. Spring Web
-2. Spring Data JPA
-3. MySQL Driver
-4. Spring Boot Devtools
-
-
-
 ## Step 2: Unzip Spring Initializer in your git rep
 
-Use your OS of choice to unzip the SpringData.zip in your git repo.
+Use your OS of choice to unzip the UserManager.zip in your git repo.
 
 
 ## Step 3: Import the Maven Project into Eclipse (or your IDE of choice)
