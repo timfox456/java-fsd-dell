@@ -245,8 +245,8 @@ table, th, td {
 <p>${message}</p>
 
 <form action="login" method="post">
-  <label for="uname">UserName:</label><br>
-  <input type="text" id="uname" name="uname"><br>
+  <label for="username">UserName:</label><br>
+  <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
   <input type="password" id="password" name="password"><br>
   <br>
