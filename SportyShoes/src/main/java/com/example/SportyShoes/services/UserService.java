@@ -19,7 +19,11 @@ public class UserService {
     public User GetUserByName(String name) {
     	return userRepository.findByName(name);
     }
-        
+     
+    public boolean ConfirmUserPassword(User user, String password) {
+    	return(user.getPassword() == password);
+    }
+    
     public Iterable<User> GetAllUsers()
     {
         return userRepository.findAll();

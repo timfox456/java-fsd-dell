@@ -346,6 +346,45 @@ Add the following in `UserService.Java`:
     public User GetUserByName(String name) {
     	return userRepository.findByName(name);
     }
+    public boolean ConfirmUserPassword(User user, String password) {
+    	return(user.getPassword() == password);
+    }
+```
+
+### Step 13: Enhance the UserController
+
+```java
+
+
+    @RequestMapping(value="/login", method = RequestMethod.POST)
+    public String handleLogin(
+    		@RequestParam(value = "username", required = true) String username,
+    		@RequestParam(value = "password", required = true) String password,
+
+    		ModelMap model) { 
+    	
+    	User user;
+    	try {
+    	
+    		
+    		user = userService.GetUserByName(username);
+    	}
+    	catch(Exception ex) {
+    		model.addAttribute("message", "ERROR: Unknown user!");
+    		return("login");
+    	}
+    	if (userService.ConfirmUserPassword(user, password)) {
+    		//TODO: Check user and password
+    		//model.addAttribute("user", user);
+    		model.addAttribute("message", "Success!");
+    		return("login");
+    	}
+    	else {
+    		model.addAttribute("message", "Invalid Password, Try again!");
+    		return("login");
+    	}
+    } 
+
 ```
 
 
