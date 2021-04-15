@@ -32,5 +32,9 @@ The admin should be able to change his password if he wants, he should be able t
  *  See purchase reports filtered by date and category
 
 
+## Notes
+
+I have a [Getting Started](./getting-started.md) document of what we had done in class to get started on this.
+
 Due Date:
 2021-05-03
