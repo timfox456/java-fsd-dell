@@ -469,6 +469,11 @@ In the UserController.java make the following changes:
 
 ```java
 
+    // This ensures user can go to http://localhost:8090 and will be redirected to userquery.
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public String welcomePage(ModelMap model) {
+    	return showUsers(model);
+    }
     @RequestMapping(value="/userquery", method = RequestMethod.GET)
     public String showUsers(ModelMap model)
     {
