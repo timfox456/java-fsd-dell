@@ -20,7 +20,7 @@ Please note there are two modules you may want to consider:
 1. Thymeleaf -- if you prefer thymeleaf views to JSPs.  Please see the SpringStarter project.
 2. Spring Security -- Spring Security is rather complex but does have a lot of features around authentication and security.
 
-![](../images/SportyShoes/SportyShoes-Initializer.png)
+![](../images/SportyShoes-Initializer.png)
 
 Go ahead and unzip the SportyShoes.zip and put it in your git repository.
 
