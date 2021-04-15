@@ -398,7 +398,14 @@ Test your application. Ensure that a valid user in your database authenticates, 
 an invalid password also returns an error.
 
 
-     
+## Step 15: Add Admin user
+
+Go into mysql workbench and run the folllowing:
+
+```sql
+insert into db_example.user (id, email, name, password) values (6, 'admin@admin.com', 'admin', 'admin');
+
+```     
 
 
 

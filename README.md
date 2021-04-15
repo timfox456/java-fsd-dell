@@ -56,6 +56,8 @@ CREATE TABLE db_example.user (
 use db_example;
 insert into db_example.user (id, email, name, password) values (1, 'someemail@someemailprovider.com', 'First', 'mypassword');
 insert into db_example.user (id, email, name, password) values (2, 'someemail@someemailprovider.com', 'Second', 'mypassword2');
+insert into db_example.user (id, email, name, password) values (6, 'admin@admin.com', 'admin', 'admin');
+
 ```
 
 
