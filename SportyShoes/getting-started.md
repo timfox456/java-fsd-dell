@@ -407,6 +407,19 @@ insert into db_example.user (id, email, name, password) values (6, 'admin@admin.
 
 ```     
 
+## Step 16: Add Entities `Product` and `Order`
+
+You should add entities as follows:
+
+[Order](./src/main/java/com/example/SportyShoes/entities/Order.java)
+[Product](./src/main/java/com/example/SportyShoes/entities/Product.java)
+
+Also add Repositories as well
+ 
+[OrderRepository](./src/main/java/com/example/SportyShoes/repositories/OrderRepository.java)
+[ProductRepository](./src/main/java/com/example/SportyShoes/repositories/ProductRepository.java)
+
+
 
 
 
