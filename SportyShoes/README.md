@@ -31,6 +31,19 @@ The admin should be able to change his password if he wants, he should be able t
  *  Browse the list of users who have signed up and be able to search users
  *  See purchase reports filtered by date and category
 
+## Additional Requirements
+
+ * The front end can be largely text (unless you otherwise desire), and there is no need for anything more than the minimal html/javascript/css as we will 
+   be covering that content in the next phase.
+ * Authentication can be enforced in any way you choose, and there is no requirement to strictly enforce security requirements. You can use Spring Security 
+   for authentication if desired but it's not required.
+ * I recommend that users be given a view to browse products and make "orders."  However, there is no need to implmement payment/etc.  A "order" could be
+   as simple as a "one-click" button next to the product that would generate an order. Things like shipping/etc are out of the scope for the prototype. 
+   Complex order management like cancellation/etc is not required.
+ 
+
+ 
+
 
 ## Notes
 
