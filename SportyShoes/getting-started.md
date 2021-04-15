@@ -321,3 +321,36 @@ public class LoginController {
 }
 
 ```
+
+
+### Step 11: Test the application
+
+Run with the goal `spring-boot:run` (in Eclipse) or Run As Spring Boot Application (in STS).  Navigate to `http://localhost:8090` and confirm
+that it does indeed show up with a login form. You should submit without errors, but as of now the application will not
+actually confirm the username / password are correct.
+
+### Step 12: Update UserRepository and UserService
+
+Add the following in `UserRepository.java`:
+
+```java
+
+public interface UserRepository extends CrudRepository<User, Integer> {
+	public User findByName(String Name);
+}
+```
+
+Add the following in `UserService.Java`:
+
+```java
+    public User GetUserByName(String name) {
+    	return userRepository.findByName(name);
+    }
+```
+
+
+     
+
+
+
+

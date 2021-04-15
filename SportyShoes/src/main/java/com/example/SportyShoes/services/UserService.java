@@ -12,11 +12,14 @@ import com.example.SportyShoes.repositories.UserRepository;
 @Service
 public class UserService {
 
-        @Autowired
-         private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
 
-
+    public User GetUserByName(String name) {
+    	return userRepository.findByName(name);
+    }
+        
     public Iterable<User> GetAllUsers()
     {
         return userRepository.findAll();
