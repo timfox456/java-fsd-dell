@@ -30,3 +30,7 @@ The admin should be able to change his password if he wants, he should be able t
  *  Manage the products in the store including categorizing them
  *  Browse the list of users who have signed up and be able to search users
  *  See purchase reports filtered by date and category
+
+
+Due Date:
+2021-05-03
