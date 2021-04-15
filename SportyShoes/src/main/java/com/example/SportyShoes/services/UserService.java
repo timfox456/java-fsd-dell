@@ -17,11 +17,15 @@ public class UserService {
 
 
     public User GetUserByName(String name) {
-    	return userRepository.findByName(name);
+    	User user = userRepository.findByName(name);
+    	if (user == null) {
+    		throw new RuntimeException("User Not Found!");
+    	}
+    	return user;
     }
      
     public boolean ConfirmUserPassword(User user, String password) {
-    	return(user.getPassword() == password);
+    	return(user.getPassword().equals(password));
     }
     
     public Iterable<User> GetAllUsers()

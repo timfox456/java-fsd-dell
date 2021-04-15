@@ -344,10 +344,15 @@ Add the following in `UserService.Java`:
 
 ```java
     public User GetUserByName(String name) {
-    	return userRepository.findByName(name);
+    	User user = userRepository.findByName(name);
+    	if (user == null) {
+    		throw new RuntimeException("User Not Found!");
+    	}
+    	return user;
     }
+     
     public boolean ConfirmUserPassword(User user, String password) {
-    	return(user.getPassword() == password);
+    	return(user.getPassword().equals(password));
     }
 ```
 
@@ -386,6 +391,11 @@ Add the following in `UserService.Java`:
     } 
 
 ```
+
+## Step 14: Test
+
+Test your application. Ensure that a valid user in your database authenticates, an unknown user returns an error, and
+an invalid password also returns an error.
 
 
      
