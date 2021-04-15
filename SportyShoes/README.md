@@ -33,6 +33,8 @@ The admin should be able to change his password if he wants, he should be able t
 
 ## Additional Requirements
 
+ * You should use Spring Boot and Spring MVC as we have discussed in class. Database should be MySQL, as we have done class. Views should be either  
+   JSP or Thymeleaf, both of which we demoed in class.
  * The front end can be largely text (unless you otherwise desire), and there is no need for anything more than the minimal html/javascript/css as we will 
    be covering that content in the next phase.
  * Authentication can be enforced in any way you choose, and there is no requirement to strictly enforce security requirements. You can use Spring Security 
